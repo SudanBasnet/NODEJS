@@ -14,7 +14,15 @@ const abs = path.resolve("./server.js"); //absolute path
 //file system=>fs
 
 const fs = require("fs");
-fs.writeFile("./file.txt", "text file content", (err) => {
+// fs.writeFile("./file.txt", "text file content", (err) => {
+//   if (err) {
+//     console.log(err);
+//     return;
+//   }
+//   console.log("write file completed");
+// });
+
+fs.appendFile("./file.txt", "\ntext file content", (err) => {
   if (err) {
     console.log(err);
     return;
