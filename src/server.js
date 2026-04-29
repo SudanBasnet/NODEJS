@@ -37,15 +37,23 @@ const fs = require("fs");
 //   }
 //   console.log(data);
 // });
-console.log(fs.existsSync("./text.txt"));
-if (fs.existsSync("./text.txt")) {
-  fs.unlink("./text.txt", (err) => {
-    if (err) {
-      console.log(err);
-      return;
-    }
-    console.log("file deleted");
-  });
-} else {
-  console.log("no such file or directory, unlink text.txt");
-}
+// console.log(fs.existsSync("./text.txt"));
+// if (fs.existsSync("./text.txt")) {
+//   fs.unlink("./text.txt", (err) => {
+//     if (err) {
+//       console.log(err);
+//       return;
+//     }
+//     console.log("file deleted");
+//   });
+// } else {
+//   console.log("no such file or directory, unlink text.txt");
+// }
+
+fs.mkdir("./folder/dir1", { recursive: true }, (err) => {
+  if (err) {
+    console.log(err);
+    return;
+  }
+  console.log("folder created");
+});
