@@ -22,18 +22,30 @@ const fs = require("fs");
 //   console.log("write file completed");
 // });
 
-fs.appendFile("./text.txt", "\ntext file content", (err) => {
-  if (err) {
-    console.log(err);
-    return;
-  }
-  console.log("write file completed");
-});
+// fs.appendFile("./text.txt", "\ntext file content", (err) => {
+//   if (err) {
+//     console.log(err);
+//     return;
+//   }
+//   console.log("write file completed");
+// });
 
-fs.readFile("./file.txt", "utf-8", (err, data) => {
-  if (err) {
-    console.log(err);
-    return;
-  }
-  console.log(data);
-});
+// fs.readFile("./file.txt", "utf-8", (err, data) => {
+//   if (err) {
+//     console.log(err);
+//     return;
+//   }
+//   console.log(data);
+// });
+console.log(fs.existsSync("./text.txt"));
+if (fs.existsSync("./text.txt")) {
+  fs.unlink("./text.txt", (err) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.log("file deleted");
+  });
+} else {
+  console.log("no such file or directory, unlink text.txt");
+}
